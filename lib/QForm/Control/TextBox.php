@@ -9,7 +9,6 @@
 
 namespace QForm\Control;
 
-use QForm\Control;
 
 class TextBox extends Control
 {

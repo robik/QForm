@@ -25,11 +25,11 @@ class HtmlRenderer implements RendererInterface
      * 
      * @return string 
      */
-    public function render(ControlInterface $control)
+    public function render(Control\ControlInterface $control)
     {               
         $return = $this->renderControl($control);
         
-        if($control instanceof CompositeControlInterface)
+        if($control instanceof Control\CompositeControlInterface)
         {
             $this->indent++;
             foreach($control as $child)
@@ -50,14 +50,14 @@ class HtmlRenderer implements RendererInterface
      * 
      * @return string 
      */
-    protected function renderControl(ControlInterface $control)
+    protected function renderControl(Control\ControlInterface $control)
     {
         $attributes; $tag;
         
         $attributes = $this->attributesToString($control->getAttributes());
         $tag        = $this->appendIndent("<{$control->getTagName()} $attributes");
         
-        if($control instanceof CompositeControlInterface)
+        if($control instanceof Control\CompositeControlInterface)
         {
             $tag .= ">\n";
         }

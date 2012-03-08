@@ -15,8 +15,7 @@ class Password extends TextBox
 {
     public function __construct($name, $value = '')
     {
-        parent::__construct('input', $value);
-        
+        parent::__construct('input', $value);        
         $this->setAttribute('type',  'password');
     }
 }

@@ -11,6 +11,6 @@ namespace QForm;
 
 interface RendererInterface
 {
-    public function render(ControlInterface $control);
+    public function render(Control\ControlInterface $control);
 }
 ?>
