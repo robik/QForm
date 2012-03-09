@@ -57,5 +57,12 @@ interface CompositeControlInterface extends ControlInterface, \IteratorAggregate
      * @return array
      */
     public function getChilds();
+    
+    /**
+     * This function appends text to current tag.
+     *
+     * @param string $text Text to add
+     */
+    public function appendText($text);
 }
 ?>

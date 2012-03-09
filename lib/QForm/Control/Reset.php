@@ -9,12 +9,12 @@
 
 namespace QForm\Control;
 
-class Password extends TextBox
+class Reset extends Button
 {
-    public function __construct($value = null)
+    public function __construct($text = null)
     {
-        parent::__construct('input', $value);        
-        $this->setAttribute('type',  'password');
+        parent::__construct('input', $text);
+        $this->setAttribute('type',  'reset');
     }
 }
 ?>

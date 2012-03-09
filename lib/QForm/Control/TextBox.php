@@ -12,12 +12,16 @@ namespace QForm\Control;
 
 class TextBox extends Control
 {
-    public function __construct($name, $value = '')
+    public function __construct($value = null)
     {
         parent::__construct('input');
-        
+                
         $this->setAttribute('type',  'text');
-        $this->setAttribute('value', $value);
+        
+        if($value !== null)
+        {
+            $this->setAttribute('value', $value);
+        }
     }
     
     /**

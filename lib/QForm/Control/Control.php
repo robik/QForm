@@ -30,11 +30,50 @@ class Control implements ControlInterface
      * Creates new Control
      *
      * @param string $tagName Tag name
-     * @param bool $closeable Is tag closeable
      */
     public function __construct($tagName)
     {
         $this->tagName = $tagName;
+    }
+    
+    /**
+     * @see QForm\Control\ControlInterface::render
+     */
+    public function render($indent = 0)
+    {   
+        return $this->appendIndent("<{$this->tagName} ".$this->renderAttributes()." />\n", $indent); 
+    }
+    
+    /**
+     * Renders attributes
+     *
+     * @param array $attributes Array of attributes
+     * 
+     * @return string
+     */
+    protected function renderAttributes()
+    {
+        $array = array();
+        
+        foreach($this->attributes as $name => $value)
+        {
+            $array[] = $name.'="'.addslashes($value).'"';
+        }
+        
+        return implode(' ', $array);
+    }
+    
+    /**
+     * Appends indent to string
+     *
+     * @param string $string String to indent
+     * @param int $indent Level of indent
+     * 
+     * @return string
+     */
+    protected function appendIndent($string, $indent)
+    {
+        return str_repeat('    ', $indent).$string;
     }
 
     
@@ -73,6 +112,17 @@ class Control implements ControlInterface
     public function setAttribute($name, $value)
     {
         $this->attributes[$name] = (string)$value;
+    }
+    
+    /**
+     * @see QForm\Control\ControlInterface::setAttributes
+     */
+    public function setAttributes(array $attributes)
+    {
+        foreach($attributes as $name => $value)
+        {
+            $this->attributes[$name] = (string)$value;
+        }
     }
     
     /**
@@ -159,6 +209,24 @@ class Control implements ControlInterface
     public function getTitle()
     {
         return $this->getAttribute('title');
+    }
+    
+    /**
+     * @see QForm\Control\ControlInterface::setName
+     */
+    public function setName($name)
+    {
+        $this->setAttribute('name', $name);
+        
+        return $this;
+    }
+    
+    /**
+     * @see QForm\Control\ControlInterface::getName
+     */
+    public function getName()
+    {
+        return $this->getAttribute('name');
     }
 }
 ?>

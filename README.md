@@ -2,8 +2,9 @@
 
 ### About
 
-QForm is simple, Object-Oriented PHP library, for making and validating forms easier.
-It's currently in development state and it should not be used in protuction yet and API can change pretty much.
+QForm is simple, Object-Oriented PHP Form toolkit, which includes Form Building and validating.
+It's independent from CSS nor JS. Everything you need is PHP to create form.
+It's currently in development state and it should not be used in protuction yet, note that API can change pretty much.
 
 ### Requirements
 
@@ -20,12 +21,11 @@ Make sure before launching that code to use some autoloader.
 ```PHP
 <?php
 # Create new form
-$form = new QForm\Form('login', 'user/login');
+$form = new QForm\Control\Form('login', 'user/login');
 
 # Add Textbox
 $form->addChild( new QForm\Control\TextBox('login'));
 
 # Create renderer
-$renderer = new QForm\HtmlRenderer();
-echo htmlspecialchars($renderer->render($form));
+echo htmlspecialchars($form->render());
 ```

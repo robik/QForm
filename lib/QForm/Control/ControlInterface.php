@@ -43,6 +43,15 @@ interface ControlInterface
      * @return ControlInterface Self
      */
     public function setAttribute($name, $value);
+        
+    /**
+     * Sets multiple attributes
+     * 
+     * @param array $attributes Attributes to set
+     * 
+     * @return ControlInterface Self
+     */
+    public function setAttributes(array $attributes);
     
     /**
      * Checks if attribute with specified name exists
@@ -116,5 +125,28 @@ interface ControlInterface
      * @return string Title text
      */
     public function getTitle();
+    
+    /**
+     * Sets control name
+     * 
+     * @param string $name Control names
+     * 
+     * @return ControlInterface Self
+     */
+    public function setName($name);
+    
+    /**
+     * Returns control name
+     * 
+     * @return string Name
+     */
+    public function getName();
+    
+    /**
+     * Renders specified control
+     * 
+     * @return string Rendered control
+     */
+    public function render();
 }
 ?>
