@@ -22,7 +22,7 @@ class Form extends CompositeControl
     protected $target;
     
     /**
-     * Form sned method
+     * Form send method
      *
      * @var string
      */
@@ -32,10 +32,9 @@ class Form extends CompositeControl
     /**
      * Creates new form
      * 
-     * @param string $name      Form name
      * @param string $target    Form target, as URI
      */    
-    public function __construct($name, $target)
+    public function __construct($target)
     {
         parent::__construct('form');
         $this->setTarget($target);
