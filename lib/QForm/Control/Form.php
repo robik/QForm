@@ -33,11 +33,13 @@ class Form extends CompositeControl
      * Creates new form
      * 
      * @param string $target    Form target, as URI
+     * @param string $method    Form method, post or get
      */    
-    public function __construct($target)
+    public function __construct($target, $method = 'get', array $attributes = array())
     {
         parent::__construct('form');
         $this->setTarget($target);
+        $this->setMethod($method);
     }
     
     /**

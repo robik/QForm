@@ -228,5 +228,13 @@ class Control implements ControlInterface
     {
         return $this->getAttribute('name');
     }
+    
+    /**
+     * @see QForm\Control\ControlInterface::__toString
+     */
+    public function __toString()
+    {
+        return $this->render();
+    }
 }
 ?>

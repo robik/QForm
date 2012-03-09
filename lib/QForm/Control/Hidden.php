@@ -11,7 +11,7 @@ namespace QForm\Control;
 
 class Reset extends Control
 {
-    public function __construct($name = null, $value = null)
+    public function __construct($name = null, $value = null, array $attributes = array())
     {
         parent::__construct('input', $text);
         $this->setAttribute('type',  'hidden');
@@ -25,6 +25,8 @@ class Reset extends Control
         {
             $this->setAttribute('value',  $value);
         }
+        
+        $this->setAttributes($attributes);
     }
 }
 ?>

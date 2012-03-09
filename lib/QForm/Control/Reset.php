@@ -11,10 +11,12 @@ namespace QForm\Control;
 
 class Reset extends Button
 {
-    public function __construct($text = null)
+    public function __construct($text = null, array $attributes = array())
     {
         parent::__construct('input', $text);
         $this->setAttribute('type',  'reset');
+        
+        $this->setAttributes($attributes);
     }
 }
 ?>

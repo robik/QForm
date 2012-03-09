@@ -18,6 +18,20 @@ It's currently in development state and it should not be used in protuction yet,
 
 Make sure before launching that code to use some autoloader.
 
+Basic:
+
+```PHP
+# Create new builder
+$builder = new QForm\Builder('/user/login', 'post');
+
+$builder->label   ('login', 'Your Login: ');
+$builder->textbox ('Type your login here',  array('id'=>'login'));
+
+echo $builder->render();
+```
+
+Alternative:
+
 ```PHP
 <?php
 # Create new form

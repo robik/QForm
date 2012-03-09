@@ -9,15 +9,16 @@
 
 namespace QForm\Control;
 
-class Submit extends Button
+class Label extends CompositeControl
 {
-    public function __construct($text = null, array $attributes = array())
+    public function __construct($for, $text, array $attributes = array())
     {
-        parent::__construct('input', $text);
-        $this->setAttribute('type',  'submit');
+        parent::__construct('label', $text);        
+        
+        $this->setAttribute('for',  $for);
+        $this->appendText($text);
         
         $this->setAttributes($attributes);
     }
-    
 }
 ?>

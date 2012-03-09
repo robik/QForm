@@ -148,5 +148,12 @@ interface ControlInterface
      * @return string Rendered control
      */
     public function render();
+    
+    /**
+     * Renders specified control
+     * 
+     * @return string
+     */
+    public function __toString();
 }
 ?>

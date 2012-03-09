@@ -34,7 +34,9 @@ class Builder
         'select'    => 'QForm\\Control\\Select',
         'option'    => 'QForm\\Control\\Option',
         
-        'hidden'    => 'QForm\\Control\\Hidden'
+        'hidden'    => 'QForm\\Control\\Hidden',
+        
+        'label'     => 'QForm\\Control\\Label'
     );
     
     

@@ -11,13 +11,15 @@ namespace QForm\Control;
 
 class Option extends CompositeControl
 {
-    public function __construct($value, $text)
+    public function __construct($value, $text, array $attributes = array())
     {
         parent::__construct('option', $value);
         
         $this->setAttribute('value',  $value);
         $this->appendText($text);
         $this->inline = true;
+        
+        $this->setAttributes($attributes);
     }
 }
 

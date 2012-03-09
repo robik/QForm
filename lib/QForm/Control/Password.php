@@ -11,9 +11,9 @@ namespace QForm\Control;
 
 class Password extends TextBox
 {
-    public function __construct($value = null)
+    public function __construct($value = null, array $attributes = array())
     {
-        parent::__construct('input', $value);        
+        parent::__construct($value, $attributes);
         $this->setAttribute('type',  'password');
     }
 }

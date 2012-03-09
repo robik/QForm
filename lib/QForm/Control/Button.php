@@ -11,7 +11,7 @@ namespace QForm\Control;
 
 class Button extends Control
 {
-    public function __construct($text = null)
+    public function __construct($text = null, array $attributes = array())
     {
         parent::__construct('input');
         $this->setAttribute('type',  'button');
@@ -20,6 +20,8 @@ class Button extends Control
         {
             $this->setAttribute('value',  $text);
         }
+        
+        $this->setAttributes($attributes);
     }
     
     /**

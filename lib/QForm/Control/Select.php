@@ -11,7 +11,7 @@ namespace QForm\Control;
 
 class Select extends CompositeControl
 {
-    public function __construct($name = null)
+    public function __construct($name = null, array $attributes = array())
     {
         parent::__construct('select');
         
@@ -19,6 +19,8 @@ class Select extends CompositeControl
         {
             $this->setName($name);
         }
+        
+        $this->setAttributes($attributes);
     }
     
     /**
