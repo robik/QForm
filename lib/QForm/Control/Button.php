@@ -11,10 +11,11 @@ namespace QForm\Control;
 
 class Button extends Control
 {
-    public function __construct($text = null, array $attributes = array())
+    public function __construct($name, $text = null, array $attributes = array())
     {
         parent::__construct('input');
         $this->setAttribute('type',  'button');
+        $this->setName($name);
         
         if($text !== null )
         {

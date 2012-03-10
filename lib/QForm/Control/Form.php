@@ -13,21 +13,7 @@ class Form extends CompositeControl
 {
     const MethodPost = "post";
     const MethodGet = "get";
-    
-    /**
-     * Form target URI
-     *
-     * @var string
-     */
-    protected $target;
-    
-    /**
-     * Form send method
-     *
-     * @var string
-     */
-    protected $method;
-    
+   
     
     /**
      * Creates new form
@@ -75,7 +61,7 @@ class Form extends CompositeControl
      */
     public function setMethod($method)
     {
-        $this->method = $method;
+        $this->setAttribute('method', $method);
         
         return $this;
     }
@@ -87,7 +73,7 @@ class Form extends CompositeControl
      */
     public function getMethod()
     {
-        return $this->method;
+        return $this->getAttribute('method');
     }
 }
 ?>

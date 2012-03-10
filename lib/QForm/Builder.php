@@ -26,7 +26,7 @@ class Builder
     protected $controls = array(
         'textbox'   => 'QForm\\Control\\Textbox',
         'password'  => 'QForm\\Control\\Password',
-        'textarea'     => 'QForm\\Control\\Textarea',
+        'textarea'  => 'QForm\\Control\\Textarea',
         
         'reset'     => 'QForm\\Control\\Reset',
         'submit'    => 'QForm\\Control\\Submit',
@@ -38,15 +38,15 @@ class Builder
         'hidden'    => 'QForm\\Control\\Hidden',
         
         'label'     => 'QForm\\Control\\Label',
-        'text'     => 'QForm\\Control\\Text',
-        'br'     => 'QForm\\Control\\Newline',
-        'newline'     => 'QForm\\Control\\Newline',
+        'text'      => 'QForm\\Control\\Text',
+        'br'        => 'QForm\\Control\\Newline',
+        'newline'   => 'QForm\\Control\\Newline',
         
         'other'     => 'QForm\\Control\\Control',
-        'control'     => 'QForm\\Control\\Control',
+        'control'   => 'QForm\\Control\\Control',
         
         'checkbox'  => 'QForm\\Control\\Checkbox',
-        'radio'  => 'QForm\\Control\\Checkbox'
+        'radio'     => 'QForm\\Control\\Radio'
     );
     
     
@@ -55,9 +55,9 @@ class Builder
      *
      * @param string $target Form target
      */
-    public function __construct($target)
+    public function __construct($target, $method = 'get')
     {
-        $this->form = new Control\Form($target);
+        $this->form = new Control\Form($target, $method);
     }
     
     /**

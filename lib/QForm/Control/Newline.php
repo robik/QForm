@@ -19,6 +19,7 @@ class Newline extends Control
     public function __construct($count = 1)
     {
         parent::__construct('br');
+        $this->count = $count;
     }
     
     /**
