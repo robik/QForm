@@ -36,7 +36,7 @@ Alternative:
 ```PHP
 <?php
 # Create new form
-$form = new QForm\Control\Form('login', 'user/login');
+$form = new QForm\Control\Form('user/login', 'post');
 
 # Add Textbox
 $form->addChild( new QForm\Control\TextBox('login'));
