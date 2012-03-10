@@ -21,6 +21,7 @@ Make sure before launching that code to use some autoloader.
 Basic:
 
 ```PHP
+<?php
 # Create new builder
 $builder = new QForm\Builder('/user/login', 'post');
 
