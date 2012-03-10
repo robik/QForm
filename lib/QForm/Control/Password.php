@@ -11,9 +11,10 @@ namespace QForm\Control;
 
 class Password extends TextBox
 {
-    public function __construct($value = null, array $attributes = array())
+    public function __construct($name, array $attributes = array())
     {
-        parent::__construct($value, $attributes);
+        parent::__construct($name, $attributes);
+        $this->setName($name);
         $this->setAttribute('type',  'password');
     }
 }

@@ -13,7 +13,8 @@ class Label extends CompositeControl
 {
     public function __construct($for, $text, array $attributes = array())
     {
-        parent::__construct('label', $text);        
+        parent::__construct('label', $text);
+        $this->inline = true;
         
         $this->setAttribute('for',  $for);
         $this->appendText($text);

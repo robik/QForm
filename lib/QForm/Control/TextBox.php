@@ -10,18 +10,15 @@
 namespace QForm\Control;
 
 
-class TextBox extends Control
+class Textbox extends Control
 {
-    public function __construct($value = null)
+    public function __construct($name, array $attributes = array())
     {
         parent::__construct('input');
                 
         $this->setAttribute('type',  'text');
-        
-        if($value !== null)
-        {
-            $this->setAttribute('value', $value);
-        }
+        $this->setName($name);
+        $this->setAttributes($attributes);
     }
     
     /**
@@ -70,6 +67,30 @@ class TextBox extends Control
     public function getSize()
     {
         return (int)$this->getAttribute('size');
+    }
+    
+    /**
+     * Sets new textbox palceholder
+     *
+     * @param string $text Placeholder
+     * 
+     * @return Textbox Self
+     */
+    public function setPlaceHolder($text)
+    {
+        $this->setAttribute('placeholder', $text);
+        
+        return $this;
+    }
+    
+    /**
+     * Returns placeholder message
+     * 
+     * @return string Placeholder
+     */
+    public function getPlaceHolder()
+    {
+        return $this->getAttribute('placeholder');
     }
 }
 ?>

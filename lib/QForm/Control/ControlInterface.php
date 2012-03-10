@@ -155,5 +155,37 @@ interface ControlInterface
      * @return string
      */
     public function __toString();
+    
+    /**
+     * Makes control enabled or disabled
+     * 
+     * @param bool $disable To disable control - true, false otherwise
+     * 
+     * @return ControlInterface self
+     */
+    public function setDisabled($disable = true);
+    
+    /**
+     * Checks if control is disabled
+     * 
+     * @return bool True if control is disabled, false otherwise
+     */
+    public function isDisabled();
+    
+    /**
+     * Sets control readonly or writeable
+     * 
+     * @param bool $readonly True to make control readonly, false otherwise
+     * 
+     * @return ControlInterface self
+     */
+    public function setReadOnly($readonly = true);
+    
+    /**
+     * Checks if control is readonly
+     * 
+     * @return bool Readonly
+     */
+    public function isReadOnly();
 }
 ?>

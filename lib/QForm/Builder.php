@@ -24,8 +24,9 @@ class Builder
      * @var array 
      */
     protected $controls = array(
-        'textbox'   => 'QForm\\Control\\TextBox',
+        'textbox'   => 'QForm\\Control\\Textbox',
         'password'  => 'QForm\\Control\\Password',
+        'textarea'     => 'QForm\\Control\\Textarea',
         
         'reset'     => 'QForm\\Control\\Reset',
         'submit'    => 'QForm\\Control\\Submit',
@@ -36,7 +37,16 @@ class Builder
         
         'hidden'    => 'QForm\\Control\\Hidden',
         
-        'label'     => 'QForm\\Control\\Label'
+        'label'     => 'QForm\\Control\\Label',
+        'text'     => 'QForm\\Control\\Text',
+        'br'     => 'QForm\\Control\\Newline',
+        'newline'     => 'QForm\\Control\\Newline',
+        
+        'other'     => 'QForm\\Control\\Control',
+        'control'     => 'QForm\\Control\\Control',
+        
+        'checkbox'  => 'QForm\\Control\\Checkbox',
+        'radio'  => 'QForm\\Control\\Checkbox'
     );
     
     
@@ -52,6 +62,8 @@ class Builder
     
     /**
      * Calls specified binding
+     * 
+     * @return Builder Self
      */
     public function __call($name, $arguments)
     {
@@ -59,6 +71,8 @@ class Builder
         {
             $this->form->addChild($this->createControl($name, $arguments));
         }
+        
+        return $this;
     }
     
     /**

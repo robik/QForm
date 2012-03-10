@@ -11,11 +11,11 @@ namespace QForm\Control;
 
 class Submit extends Button
 {
-    public function __construct($text = null, array $attributes = array())
+    public function __construct($name, $text = null, array $attributes = array())
     {
         parent::__construct('input', $text);
         $this->setAttribute('type',  'submit');
-        
+        $this->setName($name);        
         $this->setAttributes($attributes);
     }
     

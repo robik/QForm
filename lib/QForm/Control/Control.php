@@ -236,5 +236,55 @@ class Control implements ControlInterface
     {
         return $this->render();
     }
+    
+    /**
+     * @see QForm\Control\ControlInterface::setDisabled
+     */
+    public function setDisabled($disabled = true)
+    {
+        if($disabled)
+        {
+            $this->setAttribute('disabled', 'disabled');
+        }
+        else
+        {
+            $this->removeAttribute('disabled');
+        }
+        
+        return $this;
+    }
+    
+    /**
+     * @see QForm\Control\ControlInterface::isDisabled
+     */
+    public function isDisabled()
+    {
+        return ($this->hasAttribute('disabled') && $this->getAttribute('disabled') == 'disabled');
+    }
+    
+    /**
+     * @see QForm\Control\ControlInterface::setReadOnly
+     */
+    public function setReadOnly($readonly = true)
+    {
+        if($readonly)
+        {
+            $this->setAttribute('readonly', 'readonly');
+        }
+        else
+        {
+            $this->removeAttribute('readonly');
+        }
+        
+        return $this;
+    }
+    
+    /**
+     * @see QForm\Control\ControlInterface::isReadOnly
+     */
+    public function isReadOnly()
+    {
+        return ($this->hasAttribute('disabled') && $this->getAttribute('disabled') == 'disabled');
+    }
 }
 ?>
